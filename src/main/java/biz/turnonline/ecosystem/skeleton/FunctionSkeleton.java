@@ -36,7 +36,7 @@ import java.nio.file.StandardCopyOption;
 public class FunctionSkeleton
         implements HttpFunction
 {
-    private static final Logger LOGGER = LoggerFactory.getLogger( FunctionSkeleton.class.getName() );
+    private static final Logger LOGGER = LoggerFactory.getLogger( FunctionSkeleton.class );
 
     private final Gson gson;
 
