@@ -20,6 +20,7 @@ import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import io.micronaut.gcp.function.GoogleFunctionInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,6 +35,7 @@ import java.nio.file.StandardCopyOption;
  * HTTP function entry point.
  */
 public class FunctionSkeleton
+        extends GoogleFunctionInitializer
         implements HttpFunction
 {
     private static final Logger LOGGER = LoggerFactory.getLogger( FunctionSkeleton.class );
