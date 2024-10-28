@@ -2,9 +2,9 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>biz.turnonline.ecosystem</groupId>
-        <artifactId>turnonline-ecosystem</artifactId>
-        <version>4</version>
+        <groupId>io.micronaut.platform</groupId>
+        <artifactId>micronaut-parent</artifactId>
+        <version>4.6.3</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -12,7 +12,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Cloud Functions HTTP</name>
-    <description>Cloud Functions Java HTTP skeleton - Serverless Function</description>
+    <description>Cloud Functions Java HTTP Micronaut skeleton - Serverless Function</description>
 
     <scm>
         <connection>scm:git:[fetch=]git@github.com:turnonline/cloud-functions-java-http.git</connection>
@@ -35,10 +35,8 @@
 
     <properties>
         <jdk.version>21</jdk.version>
-        <maven.compiler.target>${jdk.version}</maven.compiler.target>
-        <maven.compiler.source>${jdk.version}</maven.compiler.source>
-        <maven.compiler.release>${jdk.version}</maven.compiler.release>
-        <slf4j.version>2.0.16</slf4j.version>
+        <release.version>21</release.version>
+        <micronaut.runtime>google_function</micronaut.runtime>
     </properties>
 
     <dependencyManagement>
@@ -63,35 +61,58 @@
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.11.0</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jul-to-slf4j</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.5.12</version>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>micronaut-inject</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>micronaut-inject-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.validation</groupId>
+            <artifactId>micronaut-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.gcp</groupId>
+            <artifactId>micronaut-gcp-function</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>micronaut-jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
         </dependency>
         <!-- Unit testing-->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>5.14.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
-            <version>5.14.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.test</groupId>
+            <artifactId>micronaut-test-junit5</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

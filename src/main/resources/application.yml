@@ -1,0 +1,5 @@
+jackson:
+  dateFormat: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
+micronaut:
+  application:
+    name: cloud-functions-java-http
